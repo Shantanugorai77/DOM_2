@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code | DOM</title>
+</head>
+<body style = background-color:black;color:aliceblue >
+    <ul class =  language >
+        
+        <li>JavaScript</li>
+       
+    </ul>
+</body>
+<script>   
+    function addlang(lang){  // Function to add a new language to the list
+        const li = document.createElement('li');
+        li.innerHTML = `${lang}`;
+        document.querySelector('.language').appendChild(li);
+
+    }
+    addlang ("Typescript");
+    addlang("Node Js");
+    addlang("Python")
+
+    function addOptiLang(lang){    // Function to add a new language to the list in a optimized way
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(lang));
+        document.querySelector('.language').appendChild(li);
+
+    }
+    addOptiLang("Go lang");
+    addOptiLang("Solan");
+    addOptiLang("Rust");
+
+    // EDIT IN DOM 
+
+    const secondLang = document.querySelector("li:nth-child(4)");
+   //  secondLang.innerHTML = "Tailwind CSS" ( NOT OPTIMIZED )
+   const newli = document.createElement('li');
+   newli.textContent = "Tailwind CSS" 
+   secondLang.replaceWith(newli);
+  
+   //edit in outer html file
+   const firstlang = document.querySelector("li:nth-child(1)");
+   firstlang.innerHTML = "Java"  // innerHTML is used to replace the content of an element
+
+   // REMOVE IN DOM FILE 
+   const thirdlang = document.querySelector ('li:nth-child(6)')
+   thirdlang.remove() // remove() is used to remove an element from the DOM
+
+
+
+
+    
+
+
+
+
+</script>
+
+
+    
+
+</html>

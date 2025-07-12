@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chai aur Code | DOM</title>
+
+  <!-- ✨ Stylish Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Fira Code', monospace;
+    }
+
+    body {
+      background-color: #0f0f0f;
+      color: #f8f8f2;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #ff79c6;
+      margin-bottom: 20px;
+    }
+
+    ul.language {
+      list-style-type: none;
+      background: #1e1e2f;
+      border-radius: 10px;
+      padding: 20px 30px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    ul.language li {
+      padding: 10px 0;
+      border-bottom: 1px solid #444;
+      transition: all 0.3s ease;
+    }
+
+    ul.language li:last-child {
+      border-bottom: none;
+    }
+
+    ul.language li:hover {
+      color: cadetblue;
+      transform: translateX(5px);
+    }
+
+    .footer {
+      margin-top: 50px;
+      color: #888;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🧑‍💻 Code with Coffee - Language List 🧑‍💻</h1>
+
+  <ul class="language">
+    <li>Java</li>
+  </ul>
+
+  <div class="footer">Made with ☕️ by Developer</div>
+
+  <script>
+    function addlang(lang) {
+      const li = document.createElement('li');
+      li.innerHTML = `${lang}`;
+      document.querySelector('.language').appendChild(li);
+    }
+
+    addlang("Node js");
+    addlang(" MY SQL");
+    addlang("Python");
+
+    function addOptiLang(lang) {
+      const li = document.createElement('li');
+      li.appendChild(document.createTextNode(lang));
+      document.querySelector('.language').appendChild(li);
+    }
+
+    addOptiLang("Docker");
+    addOptiLang("Solan");
+    addOptiLang("AWS");
+
+    // EDIT in DOM
+    const secondLang = document.querySelector("li:nth-child(4)");
+    const newli = document.createElement('li');
+    newli.textContent = "Tailwind CSS";
+    secondLang.replaceWith(newli);
+
+    const firstlang = document.querySelector("li:nth-child(1)");
+    firstlang.innerHTML = "JavaScript"; // Replace content
+
+    // REMOVE in DOM
+    const thirdlang = document.querySelector("li:nth-child(6)");
+    thirdlang.remove(); // Remove element
+  </script>
+</body>
+</html>
